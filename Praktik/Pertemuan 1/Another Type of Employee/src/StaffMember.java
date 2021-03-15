@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package another.type.of.employee;
 
 /**
  *
  * @author Icad
  */
-public class StaffMember {
+abstract public class StaffMember {
     protected String name, address, phone;
     
     public StaffMember(String eName, String eAddress, String ePhone){
