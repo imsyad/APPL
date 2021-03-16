@@ -17,11 +17,11 @@ public class PaintThings {
         final double COVERAGE = 350;
         Paint paint = new Paint(COVERAGE);
         
-        Rectangle deck;
-        Sphere bigBall;
-        Cylinder tank;
+        Rectangle deck = new Rectangle(20,35);
+        Sphere bigBall = new Sphere(15);
+        Cylinder tank = new Cylinder(10, 30);
         
-        double deckAmt, ballAmt, tankAmt;
+        double deckAmt = paint.amount(deck), ballAmt = paint.amount(bigBall), tankAmt = paint.amount(tank);
         
         DecimalFormat fmt = new DecimalFormat("0.#");
         System.out.println("\nNumber of gallons of paint needed...");
