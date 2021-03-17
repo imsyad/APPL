@@ -54,15 +54,28 @@ public class CirclePanel extends JPanel {
         JButton red = new JButton("Red");
         JButton black = new JButton("Black");
         
-        //
+        //Add listeners to the buttons
+        cyan.addActionListener(new ColorListener(Color.CYAN));
+        pink.addActionListener(new ColorListener(Color.PINK));
+        red.addActionListener(new ColorListener(Color.RED));
+        black.addActionListener(new ColorListener(Color.BLACK));
         
-        
-        //
+        //Create a panel
         JPanel colorPanel = new JPanel();
         colorPanel.add(cyan);
         colorPanel.add(pink);
         colorPanel.add(red);
         colorPanel.add(black);
+        
+        //Set the background of each button to be the color that it represent
+        cyan.setBackground(Color.CYAN);
+        pink.setBackground(Color.PINK);
+        red.setBackground(Color.RED);
+        black.setBackground(Color.BLACK);
+        
+        //change 'black' font into white color
+        black.setForeground(Color.WHITE);
+        
         this.add(colorPanel, "North");
     }
 //---------------------------------------------------------------
@@ -101,8 +114,20 @@ public class CirclePanel extends JPanel {
         }
     }
     
+    //Create color listener
     private class ColorListener implements ActionListener{
         
-        private 
+        private Color dc;
+        
+        //initializing new color
+        public ColorListener(Color newColor){
+            dc = newColor;
+        }
+        
+        public void actionPerformed(ActionEvent e){
+            //change circle's color
+            c = dc;
+            repaint();
+        }
     }
 }
