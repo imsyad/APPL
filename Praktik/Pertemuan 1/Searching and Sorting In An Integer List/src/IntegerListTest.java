@@ -105,6 +105,7 @@ public class IntegerListTest {
         System.out.println("5. Replace first");
         System.out.println("6. Replace all");
         System.out.println("7. Sort Decreasing:");
+        System.out.println("8. Binary search:");
         System.out.println("\nEnter your choice: ");
     }
 }
