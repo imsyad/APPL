@@ -25,6 +25,12 @@ public class WeeklySales {
         salesStaff[8] = new Salesperson("Jim", "Doe", 2850);
         salesStaff[9] = new Salesperson("Walt", "Smith", 3000);
         
+        //Compare
+        if (salesStaff[5].compareTo(salesStaff[6])<0)
+            System.out.println("\n" + salesStaff[5].getFirstName() + " less than " + salesStaff[6].getFirstName());
+        else
+            System.out.println("\n" + salesStaff[5].getFirstName() + " greater than " + salesStaff[6].getFirstName());
+        
         Sorting.insertionSort(salesStaff);
         
         System.out.println("\nRanking of Sales for the Week\n");

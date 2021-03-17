@@ -11,28 +11,28 @@ import java.util.Scanner;
  *
  * @author Icad
  */
-public class Numbers {
+public class Strings {
 
     public static void main(String[] args) {
         
-        Integer[] intList; //log : Change the data type from int (primitive) to Integer
+        String[] strList; //log : Change the data type from int (primitive) to Integer
         int size;
         
         Scanner scan = new Scanner(System.in);
     
-        System.out.println("\nHow many integers do you want to sort? ");
+        System.out.println("\nHow many String do you want to sort? ");
         size = scan.nextInt();
-        intList = new Integer[size]; //log : Change the data type from int (primitive) to Integer
+        strList = new String[size]; //log : Change the data type from int (primitive) to Integer
         
-        System.out.println("\nEnter the numbers...");
+        System.out.println("\nEnter the word(s)...");
         for(int i = 0; i < size; i++){
-            intList[i] = scan.nextInt();
+            strList[i] = scan.next();
         }
-        Sorting.insertionSort(intList); //log : Changed from selecitonSort() into insertionSort()
+        Sorting.insertionSort(strList); //log : changed from selectionSort() into insertionSort()
         
         System.out.println("\nYour numbers in sorted order...");
         for (int i = 0; i < size; i++){
-            System.out.print(intList[i] + " ");
+            System.out.print(strList[i] + " ");
         }
         System.out.println();
     }

@@ -30,6 +30,13 @@ public class Salesperson implements Comparable{
     
     public int compareTo(Object other){
         int result;
+         
+        if(((Salesperson) other).totalSales > this.totalSales)
+            result = 1;
+        else if (((Salesperson) other).totalSales < this.totalSales)
+            result = -1;
+        else
+            result =  ((Salesperson) other).firstName.compareTo(this.firstName);
         
         return result;
     }
