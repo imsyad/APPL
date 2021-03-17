@@ -68,7 +68,6 @@ public class IntegerList {
     
     //2. add method replaceAll(int oldVal, int newVal)
     public void replaceAll(int oldVal, int newVal){
-        boolean found = true;
         
         for (int i = 0; i < list.length; ++i){
             if(list[i] == oldVal){
@@ -76,4 +75,56 @@ public class IntegerList {
             }
         }
     }
+    
+    //3. add method sortDecreasing()
+    public void sortDecreasing(){
+        int maxIndex;
+        
+        for(int i = 0; i < list.length-1; i++){
+            maxIndex = i;
+            for(int j = i + 1; j < list.length; j++){
+               
+                //compare two numbers
+                //descending order
+                if(list[j] > list[maxIndex]){
+                    maxIndex = j;
+                }
+            }
+            
+            int temp = list[i];
+            
+            //swap two numbers
+            list[i] = list[maxIndex];
+            list[maxIndex] = temp;
+        }
+    }
+    
+    //4. add method int binarySearchD(int target)
+    public int binarySearchD(int target){
+        
+        int end = list.length - 1, start = 0, mid;
+        
+        while (start <= end){
+            
+            //set the middle point
+            mid = start + (end - 1) /2; 
+            
+            //check if the target is in mid
+            if (list[mid] == target)
+                return mid;
+            
+            //check if the target is least than mid
+            if(list[mid] < target)
+                //change the end point
+                end = mid + 1;
+            
+            //check if the target is greater than mid
+            else
+                //change the start point
+                start = mid - 1;
+        }
+    
+        return -1;
+    }
+    
 }
