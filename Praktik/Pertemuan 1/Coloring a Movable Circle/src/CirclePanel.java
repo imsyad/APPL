@@ -48,15 +48,20 @@ public class CirclePanel extends JPanel {
 // Add the button panel to the bottom of the main panel
         this.add(buttonPanel, "South");
 
+        //intialize for special color's variable
+        Color specialColor  = JColorChooser.showDialog(this, "Select Color", null);
+        
         //Create a button for each color
         JButton cyan = new JButton("Cyan");
         JButton pink = new JButton("Pink");
+        JButton colorChooser = new JButton("Choose Color");
         JButton red = new JButton("Red");
         JButton black = new JButton("Black");
         
         //Add listeners to the buttons
         cyan.addActionListener(new ColorListener(Color.CYAN));
         pink.addActionListener(new ColorListener(Color.PINK));
+        colorChooser.addActionListener(new ColorListener(specialColor));
         red.addActionListener(new ColorListener(Color.RED));
         black.addActionListener(new ColorListener(Color.BLACK));
         
@@ -64,12 +69,14 @@ public class CirclePanel extends JPanel {
         JPanel colorPanel = new JPanel();
         colorPanel.add(cyan);
         colorPanel.add(pink);
+        colorPanel.add(colorChooser);
         colorPanel.add(red);
         colorPanel.add(black);
         
         //Set the background of each button to be the color that it represent
         cyan.setBackground(Color.CYAN);
         pink.setBackground(Color.PINK);
+        colorChooser.setBackground(specialColor);
         red.setBackground(Color.RED);
         black.setBackground(Color.BLACK);
         
@@ -124,7 +131,7 @@ public class CirclePanel extends JPanel {
             dc = newColor;
         }
         
-        public void actionPerformed(ActionEvent e){
+        public void actionPerformed(ActionEvent e){            
             //change circle's color
             c = dc;
             repaint();
