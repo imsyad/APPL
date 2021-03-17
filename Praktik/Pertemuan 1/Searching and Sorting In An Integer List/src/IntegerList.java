@@ -59,14 +59,21 @@ public class IntegerList {
     
     //1. add method replaceFirst(int oldVal, int newVal)
     public void replaceFirst(int oldVal, int newVal){
-        boolean found = false;
+ 
         int valLoc = search(oldVal);
         
-        if (valLoc >= 0){
-            found = true;
+        if (valLoc >= 0)
             list[valLoc] = newVal;
-        }
-        
     }
     
+    //2. add method replaceAll(int oldVal, int newVal)
+    public void replaceAll(int oldVal, int newVal){
+        boolean found = true;
+        
+        for (int i = 0; i < list.length; ++i){
+            if(list[i] == oldVal){
+                list[i] = newVal;
+            }
+        }
+    }
 }
