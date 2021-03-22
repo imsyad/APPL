@@ -36,7 +36,8 @@ public class Sorting {
         Comparable key = list[index];
         int position = index;
         
-        while (position > 0 && key.compareTo(list[position-1]) > 0){ //log : changed from ascending into descending "<0 to >0"
+        while (position > 0 && key.compareTo(list[position-1]) > 0){ 
+        //log : changed from ascending into descending "<0 to >0"
             list[position] = list[position-1];
             position--;
         }

@@ -25,7 +25,8 @@ public class Salesperson implements Comparable{
     }
     
     public boolean equals(Object other){
-        return (lastName.equals(((Salesperson)other).getLastName()) && firstName.equals(((Salesperson)other).getFirstName()));
+        return (lastName.equals(((Salesperson)other).getLastName()) 
+                && firstName.equals(((Salesperson)other).getFirstName()));
     }
     
     public int compareTo(Object other){
