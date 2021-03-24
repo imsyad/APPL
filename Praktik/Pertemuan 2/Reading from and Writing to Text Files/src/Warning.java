@@ -23,13 +23,11 @@ public class Warning {
         String path = "F:\\Tugas\\Semester 4\\APPL\\Praktik\\Pertemuan 2\\Reading from and Writing to Text Files\\file test\\"; //Folder path
         try {
             // Set up scanner to input file
-//        BufferedReader br = new BufferedReader(new FileReader(path + inputName));
             File inFile = new File(path + inputName);
             Scanner scan = new Scanner(inFile);
 
             // Set up the output file stream
-            PrintWriter outFile = new PrintWriter(outputName);
-//        FileWriter fw = new FileWriter(path + outputName);
+            PrintWriter outFile = new PrintWriter(path + outputName);
 
             // Print a header to the output file
             outFile.println();
@@ -51,20 +49,21 @@ public class Warning {
                 // write the student data to the output file.
                 if (creditHrs < 30) {
                     if (gpa < 1.5) {
-                        outFile.write(name + " " + creditHrs + " " + gpa);
+                        outFile.println(name + " " + creditHrs + " " + gpa);
                     }
                 } else if (creditHrs < 60) {
                     if (gpa < 1.75) {
-                        outFile.write(name + " " + creditHrs + " " + gpa);
+                        outFile.println(name + " " + creditHrs + " " + gpa);
                     }
                 } else {
                     if (gpa < 2.0) {
-                        outFile.write(name + " " + creditHrs + " " + gpa);
+                        outFile.println(name + " " + creditHrs + " " + gpa);
                     }
                 }
-
+                outFile.flush();
             }
-// Close output file
+            // Close output file
+            outFile.close();
         } catch (FileNotFoundException exception) {
             System.out.println("The file " + inputName + " was not found.");
         } catch (IOException exception) {
