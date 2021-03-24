@@ -18,7 +18,7 @@ public class Factorials {
             try {
                 System.out.println("Factorial(" + val + ") = " + MathUtils.factorial(val));
             } catch (IllegalArgumentException e) {
-                //print error message
+                //print error m essage
                 System.err.println(e.getMessage());
             }
             
