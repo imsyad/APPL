@@ -1,0 +1,4 @@
+Smith 27 83.7
+Jones 21 28.35
+Walker 96 182.4
+Doe 60 150
