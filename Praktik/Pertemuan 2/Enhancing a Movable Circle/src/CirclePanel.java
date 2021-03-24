@@ -35,9 +35,20 @@ public class CirclePanel extends JPanel {
         right.addActionListener(new MoveListener(20, 0));
         up.addActionListener(new MoveListener(0, -20));
         down.addActionListener(new MoveListener(0, 20));
+        
+        // Add mnemonics to the button
+        left.setMnemonic(KeyEvent.VK_L);
+        right.setMnemonic(KeyEvent.VK_R);
+        up.setMnemonic(KeyEvent.VK_U);
+        down.setMnemonic(KeyEvent.VK_D);
+        
+        // Add tooltips to the button
+        left.setToolTipText("Move circle 20 units to the left side" );
+        right.setToolTipText("Move circle 20 units to the right side ");
+        up.setToolTipText("Move circle up to 20 units");
+        down.setToolTipText("Move circle down to 20 units");       
+        
 // Need a panel to put the buttons on or they'll be on
-
-        left.setToolTipText(TOOL_TIP_TEXT_KEY);
 // top of each other.
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(left);
