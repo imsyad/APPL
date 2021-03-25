@@ -32,8 +32,8 @@ public class RatePanel extends JPanel {
             "Indian Rupee", "Mexican Peso"};
         
         JComboBox currency = new JComboBox(currencyName);
-     
-        currency.addActionListener(new ComboListener());
+        currency.setBounds(50,50,90,20);
+        currency.addActionListener(new ComboListener(currency;
         
         rate = new double[]{0.0, 1.2103, 0.7351,
             0.0091, 0.6969,
@@ -41,6 +41,7 @@ public class RatePanel extends JPanel {
         result = new JLabel(" ------------ ");
         add(title);
         add(result);
+        add(currency);
     }
 // ******************************************************
 // Represents an action listener for the combo box.
