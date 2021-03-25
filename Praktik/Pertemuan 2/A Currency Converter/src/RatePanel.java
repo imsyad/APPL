@@ -83,14 +83,18 @@ public class RatePanel extends JPanel {
 // --------------------------------------------------
         public void actionPerformed(ActionEvent event) {
             
+            //get input text from user
             String input = inputCurrency.getText();
                                        
             try{
+                //ter
                 result.setText(input + currencyName[currency.getSelectedIndex()]
                     + " = " + (rate[currency.getSelectedIndex()] * Double.parseDouble(input)) + " U.S. Dollars");
             }
             catch(NumberFormatException e){
-                input = "1";
+                System.err.println(e.getMessage());
+                
+                //clear textfield if exception catched
                 inputCurrency.setText("");
             }
         }
