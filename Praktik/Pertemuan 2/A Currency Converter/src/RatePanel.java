@@ -33,18 +33,37 @@ public class RatePanel extends JPanel {
             "Japanese Yen", "Australian Dollar",
             "Indian Rupee", "Mexican Peso"};
         
-        currency = new JComboBox(currencyName);
-        currency.setBounds(50,50,90,20);    
-        currency.addActionListener(new ComboListener());
-        
-        JLabel inputLabel = new JLabel("Input: ");
-        inputLabel.setBounds(50, 50, 90, 20);
-        inputCurrency = new JTextField(10);
-        
         rate = new double[]{0.0, 1.2103, 0.7351,
             0.0091, 0.6969,
             0.0222, 0.0880};
         result = new JLabel(" ------------ ");
+        
+        //Create JComboBox
+        currency = new JComboBox(currencyName);
+//        currency.setBounds(50,50,90,20);    
+        currency.addActionListener(new ComboListener());
+        
+        //Create text field
+        JLabel inputLabel = new JLabel("Input: ");
+        inputLabel.setBounds(50, 50, 90, 20);
+        inputCurrency = new JTextField(10);
+        
+//        Insets insets = this.getInsets();
+//        Dimension dim;
+//        
+//        dim = title.getPreferredSize();
+//        title.setBounds(20 + insets.left, 10 + insets.top, dim.width, dim.height);
+//        
+//        dim = inputLabel.getPreferredSize();
+//        dim = inputCurrency.getPreferredSize();
+//        inputCurrency.setBounds(20 + insets.left, 40 + insets.top, dim.width, dim.height);
+//        
+//        dim = currency.getPreferredSize();
+//        currency.setBounds(20 + insets.left, 65 + insets.top, dim.width, dim.height);
+//        
+//        dim = result.getPreferredSize();
+//        result.setBounds(20 + insets.left, 100 + insets.top, dim.width + 200, dim.height);
+        
         add(title);
         add(inputLabel);
         add(inputCurrency);
@@ -63,8 +82,15 @@ public class RatePanel extends JPanel {
 // --------------------------------------------------
         public void actionPerformed(ActionEvent event) {
             
-            result.setText("1 " + currencyName[currency.getSelectedIndex()]
-                    + " = " + rate[currency.getSelectedIndex()] + " U.S. Dollars");
+            String input = inputCurrency.getText();
+                                       
+            try{
+                result.setText(input + currencyName[currency.getSelectedIndex()]
+                    + " = " + (rate[currency.getSelectedIndex()] * Double.parseDouble(input)) + " U.S. Dollars");
+            }
+            catch(NumberFormatException e){
+                System.err.println(e.getMessage());
+            }
         }
     }
 }
