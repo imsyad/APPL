@@ -40,36 +40,34 @@ public class RatePanel extends JPanel {
         
         //Create JComboBox
         currency = new JComboBox(currencyName);
-//        currency.setBounds(50,50,90,20);    
         currency.addActionListener(new ComboListener());
         
         //Create text field
-        JLabel inputLabel = new JLabel("Input: ");
-        inputLabel.setBounds(50, 50, 90, 20);
         inputCurrency = new JTextField(10);
         inputCurrency.addActionListener(new ComboListener());
+                
+        GridBagLayout grid = new GridBagLayout();
+        GridBagConstraints gbc = new GridBagConstraints();
         
-//        Insets insets = this.getInsets();
-//        Dimension dim;
-//        
-//        dim = title.getPreferredSize();
-//        title.setBounds(20 + insets.left, 10 + insets.top, dim.width, dim.height);
-//        
-//        dim = inputLabel.getPreferredSize();
-//        dim = inputCurrency.getPreferredSize();
-//        inputCurrency.setBounds(20 + insets.left, 40 + insets.top, dim.width, dim.height);
-//        
-//        dim = currency.getPreferredSize();
-//        currency.setBounds(20 + insets.left, 65 + insets.top, dim.width, dim.height);
-//        
-//        dim = result.getPreferredSize();
-//        result.setBounds(20 + insets.left, 100 + insets.top, dim.width + 200, dim.height);
+        //layouting component
+        setLayout(grid);
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        add(title, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        add(inputCurrency, gbc);
         
-        add(title);
-        add(inputLabel);
-        add(inputCurrency);
-        add(currency);
-        add(result);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        add(currency, gbc);
+        
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        add(result,gbc);
+
     }
 // ******************************************************
 // Represents an action listener for the combo box.
@@ -81,6 +79,7 @@ public class RatePanel extends JPanel {
 // the value in that currency then computes and
 // displays the value in U.S. Dollars.
 // --------------------------------------------------
+        @Override
         public void actionPerformed(ActionEvent event) {
             
             //get input text from user
@@ -88,10 +87,12 @@ public class RatePanel extends JPanel {
                                        
             try{
                 //ter
-                result.setText(input + currencyName[currency.getSelectedIndex()]
+                result.setText(input + " " + currencyName[currency.getSelectedIndex()]
                     + " = " + (rate[currency.getSelectedIndex()] * Double.parseDouble(input)) + " U.S. Dollars");
             }
             catch(NumberFormatException e){
+                
+                //get error messages
                 System.err.println(e.getMessage());
                 
                 //clear textfield if exception catched
