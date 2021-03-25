@@ -12,7 +12,6 @@ public class ParseInts {
     public static void main(String[] args) {
         int val, sum = 0;
         Scanner scan = new Scanner(System.in);
-        String line;
         System.out.println("Enter a line of text");
         Scanner scanLine = new Scanner(scan.nextLine());
 
