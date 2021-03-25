@@ -47,6 +47,7 @@ public class RatePanel extends JPanel {
         JLabel inputLabel = new JLabel("Input: ");
         inputLabel.setBounds(50, 50, 90, 20);
         inputCurrency = new JTextField(10);
+        inputCurrency.addActionListener(new ComboListener());
         
 //        Insets insets = this.getInsets();
 //        Dimension dim;
@@ -89,7 +90,8 @@ public class RatePanel extends JPanel {
                     + " = " + (rate[currency.getSelectedIndex()] * Double.parseDouble(input)) + " U.S. Dollars");
             }
             catch(NumberFormatException e){
-                System.err.println(e.getMessage());
+                input = "1";
+                inputCurrency.setText("");
             }
         }
     }
