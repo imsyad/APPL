@@ -33,15 +33,15 @@ public class RatePanel extends JPanel {
         
         JComboBox currency = new JComboBox(currencyName);
         currency.setBounds(50,50,90,20);
-        currency.addActionListener(new ComboListener(currency;
+        currency.addActionListener(new ComboListener(currency.getSelectedIndex()));
         
         rate = new double[]{0.0, 1.2103, 0.7351,
             0.0091, 0.6969,
             0.0222, 0.0880};
         result = new JLabel(" ------------ ");
         add(title);
-        add(result);
         add(currency);
+        add(result);
     }
 // ******************************************************
 // Represents an action listener for the combo box.
@@ -53,11 +53,16 @@ public class RatePanel extends JPanel {
 // the value in that currency then computes and
 // displays the value in U.S. Dollars.
 // --------------------------------------------------
-
+        private int index;
+        
+        public ComboListener(int index){
+            this.index = index + 1;
+        }
+        
         public void actionPerformed(ActionEvent event) {
-            int index = 0;
             result.setText("1 " + currencyName[index]
                     + " = " + rate[index] + " U.S. Dollars");
+            repaint();
         }
     }
 }
