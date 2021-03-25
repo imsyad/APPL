@@ -27,7 +27,7 @@ public class CountLetters {
             catch (ArrayIndexOutOfBoundsException e) {
                 //catch the exception
                 //print usefull message
-                System.err.println(word.charAt(i) + " is not a word");
+                System.err.println(word.charAt(i) + " is not a letter");
             }
         }
 
