@@ -1,0 +1,319 @@
+
+ 
+     Release Notes for MogwaiERDesignerNG
+     
+Requirements
+
+* Java 6 Runtime ( SDK not required )
+
+  At least update# 10 is required on non Windows platforms,
+  as in prior versions there is a problem with application 
+  preferences and the JAXP API.
+
+License
+
+This software uses or is based on the following libraries:
+
+  Apache Commons ( www.apache.org )
+  Apache Batik ( www.apache.org )
+  JGraph ( www.jgraph.com )
+  JGoodies ( www.jgoodies.com )
+  Java3D
+  AnaglyphCanvas3D (http://sourceforge.net/projects/anaglyphcanvas3)
+  JasperReports ( http://jasperforge.org )
+  Some stuff from java.net ( https://www.dev.java.net )
+  InfoNode Docking Windows GPL Version ( http://www.infonode.net/index.html?idw )
+  Metawidget ( http://www.metawidget.org )
+  Mark James ( http://www.famfamfam.com/lab/icons/silk/ )
+  ... Many more ...
+  
+ Thanks to the following contributors
+ 
+  Thomas Breitkreuz for his H2 dialect, report templates and many good feature requests
+  Thomas Winkler for his MSAccess dialect, testing, several bugfixes, usability enhancements, feature requests and implementation of CustomTypes
+  Meo Bogliolo for providing the ERDesignerNG icons
+
+Release 1.0
+
+* First support for editing domains, defaultvalues, tables and relations
+* First support for reverse engineering of different JDBC datasources
+* JDBC dialects available for MySQL, MySQL(InnoDB), MSSQL, Oracle , Postgres 
+  and DB2
+
+Release 1.0.1
+
+* Tested reverse engineering with the following databases
+  MSSQL Dialect  : Microsoft SQL Server Version 09.00.3042 ( JTDS JDBC - Driver 1.2.2 )
+                   Microsoft SQL Server 08.00.2039 ( JTDS JDBC - Driver 1.2.2 )
+  MySQL Dialect  : MySQL Version 5.0.45-community-nt (MySQL Connector 5.1.5 )
+                   MySQL Version 4.1.22-community-nt (MySQL Connector 5.1.5 )
+  Oracle Dialect : Oracle Database 10g Release 10.2.0.3.0 - Production ( Oracle 10 client )
+* New JGraph Version ( Image Export is now working correctly )
+* Added support for index editing
+* Removed DB2 dialect ( no test environment available )
+* Added generic JDBC dialect
+* Added schema validation for loading ERDesigner models from file
+* Added configuration files for dialect datatypes
+     
+Release 1.0.2
+
+* First version including the SquirrelSQL plugin ( for Squirrel 2.6.4 )
+* Added SquirrelDialect to interface with the Squirrel DatabaseMezaData API
+* DOT Path ( AT&T Layout library ) is now configurable with preferences dialog
+* Tested reverse engineering with the following databases
+  PostgreSQL Dialect : PostgreSQL 8.2.6 ( JDBC3 Driver )
+  
+Release 1.1
+
+* Refactored domain system for support of size, decimal digits and radix
+* Added model modification tracker to track model changes
+* Removed generic jdbc dialect
+* Added unit tests for MySQL, MSSQL, Oracle and Postgres dialect
+* Added first beta of DB2 support
+* Removed domain dictionary ( Now in Table editor )
+* Removed default value dictionary ( Now in Table editor )
+* Added Exception notifier dialog
+* Added SQL Browser window
+* Added export functionality for DDL scripts for whole model
+* Added export functionality for DDL scripts of last changes
+* Added saving of model modifications in separate SQL files
+
+Release 1.1.1
+
+* Bug Fixing in Squirrel Plugin ( Connection was closed during Reverse Engineering )
+* Bug Fixing in Squirrel Plugin ( DDL Generation fails in PluginMode )
+
+Release 1.2
+
+* Bug Fixing for some Swing Layouts to make them viewable in Netbeans
+* Implemented Layouters powered by Eclipse ZEST and JUNG
+* Bug Fixing 1886490 [ERDesignerNG] Default values not respected
+* Bug Fixing 1886489 [ERDesignerNG] Reverse engineering / MySQL AUTO_INCREMENT
+* Implemented Complete Compare fuctionality
+* A backup of the original MXM file is now made for security reasons
+
+Release 1.2.1
+
+* Several bug fixes preventing the complete compare to work in some
+  conditions
+  
+Release 1.2.2
+
+* Bug Fixing 1899736 [ERDesignerNG] English should be default locale
+* Bug Fixing 1891226 [ERDesignerNG] Scale not defaults to 10
+* Bug Fixing 1891017 [ERDesignerNG] UI hangs if re throws exception
+* Bug Fixing 1890979 [ERDesignerNG] Complete compare fails sometimes
+* Bug Fixing 1899732 [ERDesignerNG] Fails to reverse engineer oracle columns
+
+Release 1.3
+
+* Implemented FR 1899729 [ERDesignerNG] Table selection for reverse engineer
+* Implemented FR 1905362 [ERDesignerNG] Reuse current model during reverse enginer
+* Implemented FR 1903318 [ERDesignerNG] Add support for subject areas
+* Bug Fixing 1912834 [ERDesignerNG] RE Table selection fails
+* Bug Fixing 1912838 [ERDesignerNG] Dropping a table should drop the constraints
+
+Release 1.4
+
+* Bug Fixing 1934764 [ERDesignerNG] Table name length limitation for MySQL wrong
+* Bug Fixing 1934765 [ERDesignerNG] DataType DECIMAL UNSIGNED fails in MySQL
+* Bug Fixing 1958824 [ERDesignerNG] entity comment not saved
+* Bug Fixing 1968870 [ERDesignerNG] Complete compare fails on attributes
+* Bug Fixing 1969689 [ERDesignerNG] Reverse engineer pk fails on DB2
+* Bug Fixing 1970375 [ERDesignerNG] Reverse engineer fk fails on DB2
+* Fixed some spelling mistakes
+* Implemented FR 1950583 [ERDesignerNG] Save connection parameters
+* Implemented FR 1938750 [ERDesignerNG] Show comments in editing area
+* Implemented FR 1973045 [ERDesignerNG] Add grid view to editor
+
+Release 1.5
+
+* Working on comments in editor
+* Implemented FR 1958830 [ERDesignerNG] notes/text on diagram
+* Bug Fixing 1977581 [ERDesignerNG] grid related minor issues
+* Bug Fixing 1978355 [ERDesignerNG] string default values on MySQL
+* Bug Fixing 2070251 [ERDesignerNG] Lack of primary key causes exception
+* Applied patch 2124875 [ERDesignerNG] Add Postgres data types
+
+Release 1.6
+
+* Implemented FR 2184481 Allow specifying table fields to show after rev. engineering
+* Implemented FR 1886304 [ERDesignerNG] Allow saving of model to database
+* Implemented FR 1958835 [ERDesignerNG] ability to sort columns
+* Implemented FR 1977556 [ERDesignerNG] db aliases
+* Implemented FR 1904441 [ERDesignerNG] Support for logical database design
+* Bug Fixing 2215901 [ERDesignerNG] showing and hiding comments does not work
+* Bug Fixing 2278602 [ERDesignerNG] Relation text offset position not stored
+* Bug Fixing 2283538 [ERDesignerNG] Relation does not take care of attribute order
+* Bug Fixing 2283527 [ERDesignerNG] Line separators sometimes wrong
+* Bug Fixing 2284610 [ERDesignerNG] domains cannot be saved
+* Bug Fixing 2215889 [ERDesignerNG] Exception when using MySQL BIT Type
+* Applied patch 2124875 [ERDesignerNG] Add Postgres data types
+
+Release 2.0
+
+* Improved UI response during long time tasks like reverse engineering and complete compare
+* Added support for automatic IZPack installers
+* Improved handling of recently used files and last database connections
+* Added support for H2 (Thanks to Thomas Breitkreuz)
+* Improved complete compare functionality for indexes
+* If there is a duplicate relation name during reverse engineering, a new unique name is generated
+* Added support to Export model to OpenXava
+* DataType configuration is now stored in user's home directory
+* Plugin is now also available for Eclipse
+* Added IntelliLayout Feature
+* Bug Fixing 2513135 [ERDesignerNG] Oracle complete compare fails with date colum
+* Bug Fixing 2675526 [ERDesignerNG] Generation of migration script not possible
+* Bug Fixing 2615849 [ERDesignerNG] Wrong dialect is used to communicate with rep
+* Bug Fixing 2504309 [ERDesignerNG] ERdesigner 1.6: problems on exit
+* Bug Fixing 2675509 [ERDesignerNG] Oracle RE of indexes fails
+* Bug Fixing 2616079 [ERDesignerNG] OnUpdate=Cascade not persisted
+* Bug Fixing 2675551 [ERDesignerNG] DB model comparison does not work
+* Bug Fixing 2675559 [ERDesignerNG] Clipping labels
+* Bug Fixing 2686597 [ERDesignerNG] Used domains are deletable
+* Bug Fixing 2686630 [ERDesignerNG] Default value not setable
+* Bug Fixing 2686882 [ERDesignerNG] Domains not initialized
+* Bug Fixing 2686627 [ERDesignerNG]  'NOT NULL' ist not generated
+* Bug Fixing 2675535 [ERDesignerNG] Not possible to edit relations in subject area
+* Bug Fixing 2292224 [ERDesignerNG] Comments cannot be added to Subject Areas
+* Bug Fixing 2735418 [ERDesignerNG] Table content is clipped
+* Bug Fixing 2735413 [ERDesignerNG] German umlauts corrupted
+* Bug Fixing 2898966 [ERDesignerNG] domain editor: base-datatype *required*
+* Implemented FR 2581994 [ERDesignerNG] Support for function based indexes
+* Implemented FR 1905364 [ERDesignerNG] Add support for views ( early alpha )
+* Implemented FR 2675641 [ERDesignerNG] ESC Default buttons for dialogs
+* Implemented FR 2686903 [ERDesignerNG] Store main window size
+* Implemented FR 2675574 [ERDesignerNG] Resizable dialog windows
+* Implemented FR 1889667 [ERDesignerNG] Allow editing of Edge Waypoints ( right click + ALT )
+* Implemented FR 2686546 [ERDesignerNG] Save vs. Save As
+* Implemented FR 2169348 [ERDesignerNG] Allow switching of database/dialect to generated mult. ddls
+* Implemented FR 2690714 [ERDesignerNG] Add relation constraint RESTRICT
+* Implemented FR 2714523 [ERDesignerNG] prompt for password before db operation
+* Implemented FR 2504332 [ERDesignerNG] better comments display
+* Implemented FR 2711884 [ERDesignerNG] Add support for hidden relationships
+* Implemented FR 2686547 [ERDesignerNG] Export to HTML
+* Implemented FR 2220184 [ERDesignerNG] Make documentation available as JavaHelp
+* Implemented FR 2690710 [ERDesignerNG] Start script should switch to installation directory
+* Implemented FR 2725418 [ERDesignerNG] Add support for custom types
+
+Release 2.0.1
+
+* Bug Fixing 2836568 [ERDesignerNG] Mogwai ERD Screen Layout
+* Bug Fixing 2837689 [ERDesignerNG] DDL codes can't be copied to clipboard
+
+Release 2.5.0
+
+* Bug Fixing 2861394 [ERDesignerNG] Convert Datamodel Ignores Data Type Changes
+* Bug Fixing 2836980 [ERDesignerNG] error onmultiple fields selection on entities
+* Bug Fixing 2858806 [ERDesignerNG] Subject area positioning / deletion issues
+* Bug Fixing 2876904 [ERDesignerNG] ReverseEng dialog does'nt show avail. schemas
+* Bug Fixing 2876916 [ERDesignerNG] Reverse-Eng. PgSQL VARCHAR max-length wrong
+* Bug Fixing 2882258 [ERDesignerNG] Reverse engineer not working on various DBMSs
+* Bug Fixing Subject Areas menu was not updated when hiding areas within the editor using the context menu
+* Bug Fixing Preferences Dialog required fields were not correctly highlighted
+* Bug Fixing 2874576 [ERDesignerNG] Support PostgreSQL INET datatype
+* Bug Fixing 2882258 Reverse engineer not working on various DBMSs
+* Bug Fixing 2880450 [ERDesignerNG] existing data-type-xml is not updated by app
+* Bug Fixing 2892966 [ERDesignerNG] PostgreSQL fails to RevEng schemas w domains
+* Bug Fixing 2895202 [ERDesignerNG] RevEng PostgreSQL domains shows VARCHAR(0)
+* Bug Fixing 2895853 [ERDesignerNG] DbConnEditor *don't* overwrite user input
+* Bug Fixing 2895110 [ERDesignerNG] create *valid* UTF-8 encoded MXM files
+* Bug Fixing 2899094 [ERDesignerNG] select first *non-system* schema in RevEngEd
+* Bug Fixing 2895140 [ERDesignerNG] NullPointerException in during layouting
+* Implemented FR 2675655 [ERDesignerNG] Automatic entity relation propagation
+* Implemented FR 2791976 [ERDesignerNG] Support for MySQL ENUM Types
+* Implemented FR 2711890 [ERDesignerNG] Allow user settable defaults for new relationships
+* Implemented FR 2883197 [ERDesignerNG] Add outline window to the editor
+* Implemented FR 2711878 [ERDesignerNG] edit entry dialog usability improvements
+* Implemented FR 2830914 [ERDesignerNG] Creating entities is overly complicated
+* Implemented FR 2883197 [ERDesignerNG] Add outline window to the editor
+* Implemented FR 2892962 [ERDesignerNG] support MSAccess databases (*.mdb)
+* Implemented FR 2893195 [ERDesignerNG] provide expand/collapse all children in outli
+* Implemented FR 2891900 [ERDesignerNG] export to *.svg - create *real* SVG-XML
+* Implemented FR 2893184 [ERDesignerNG] (de)select all function in tableselect dialog
+* Implemented FR 2895534 [ERDesignerNG] show RevEngEd only on DBs with schema support
+* Implemented FR 2896460 [ERDesignerNG] Replace PDF Help viewer
+* Fixed typos in Reverse-Engineer dialog (german) and RelationEditor (german)
+* Performance tuning in Intelligent Layout functionality
+* Tables are now layed out like a grid after reverse engineering
+* Fixed ClassCastException when moving relation labels
+* Fixed some issues regarding object naming in model repository on different databases
+
+Release 2.6.0
+
+* Added support for scaffolded properties based on the current dialect for tables, views, relations and domains
+* Bug Fixing 2949508 [ERDesignerNG] Rev Eng not handling UDTs in PostgreSQL
+* Bug Fixing 2952877 [ERDesignerNG] Custom Types
+* Bug Fixing 2933615 [ERDesignerNG] UUID Datatype not Supported in PostgreSQL
+* Implemented FR 2982848 [ERDesignerNG] Hide password in ConnectionEditor
+* Implemented FR 2925550 [ERDesignerNG] Compare with other models
+
+Release 2.7.0
+
+* Implemented FR 2895866 [ERDesignerNG] force connection aliases to be unique
+* Implemented FR 2880354 [ERDesignerNG] wrap and indent *.mxm
+* Implemented FR 2895112 [ERDesignerNG] do *not* show column-comments by default
+* Implemented FR 2895244 [ERDesignerNG] make the context-menus consistent
+* SQL Area and View editor are not syntax highlighted
+* Implemented FR 2895576 [ERDesignerNG] TableSelectEditor devide tables from views
+* Implemented FR 3158981 [ERDesignerNG] Add SQL Browser the the UI
+* Bug Fixing 3056071 [ERDesignerNG] postgres unkown datatype prevent reverse eng.
+
+Release 3.0.0
+
+* Added first version of 3D Model Editor
+* Added first version of 2D Interactive Model Editor
+* Implemented FR 3317539 [ERDesignerNG] TableSelectEditor: (De)select whole subtrees
+* Implemented FR 2895576 [ERDesignerNG] TableSelectEditor devide tab
+* Implemented FR 2924838 [ERDesignerNG] Using Oracle' tablespace
+* Implemented FR 2880756 [ERDesignerNG] Allow copying of entities and views
+* Implemented FR 3413307 [ERDesignerNG] Error changing view 2D -> 3D
+* Implemented FR 2895223 [ERDesignerNG] SubjectAreas handling
+* Implemented FR 3413009 [ERDesignerNG] Show only the appropriate main-nodes in tree
+* Implemented FR 3414698 [ERDesignerNG] let CTRL+Mousewheel zoom diagram
+* Implemented FR 3412908 [ERDesignerNG] Reverse engineer Details of UDTs
+* Bug Fixing 2899094 [ERDesignerNG] select first *non-system* schema in RevEngEd (re-introduced by buggy commit in v1072)
+* Bug Fixing 2975206 [ERDesignerNG] Unknown data type during revers engineering
+* Bug Fixing 3306174 [ERDesignerNG] Unknown datatype (2.7.0 release)
+* Bug Fixing 3184767 [ERDesignerNG] SQL server 2008 reengineering exception
+* Bug Fixing 3161426 [ERDesignerNG] Error saving/loading projet
+* Bug Fixing 3317547 [ERDesignerNG] Error during RevEnging Postgres-DB ('Cannot find table in model')
+* Bug Fixing 3413026 [ERDesignerNG] the new 3D view does not support loops
+* Bug Fixing 3416991 [ERDesignerNG] behaviour (de)selecting objects in diagram
+* Bug Fixing 3414627 [ERDesignerNG] SubjectArea issues
+* Bug Fixing 3420950 [ERDesignerNG] DomainEditor: comments not stored
+* Bug Fixing 3420937 [ERDesignerNG] PostgreSQL: comments of domains not RevEnged
+* Bug Fixing 3426409 [ERDesignerNG] Recent builds won't install on Windows Server 2008 R2 x64
+* Bug Fixing 3429294 [ERDesignerNG] Cannot Delete Comment
+* Working on support for Spatial Datatypes & Fulltext indexes
+* Added support for model validation & quick fixes
+* Added support for anaglyphic 3d mode
+* Improved usability of table editor
+* Improved usability of domain editor
+* Added support for crowfoot notation
+* Added usage data collector
+* Bug Fixing 3547370 [ERDesignerNG] i can't open prederence
+* Bug Fixing 3546245 [ERDesignerNG] NUMBER type without fraction -> error
+* Bug Fixing 3438699 [ERDesignerNG] NoClassError at creating documentation
+* Bug Fixing 3537462 [ERDesignerNG] OpenXava generator fails on postgres varchar()
+* Bug Fixing NPE during domain loading
+
+Release 3.1.0
+
+* Bug Fixing #181 Unknown data type: Integer[]
+* Bug Fixing SQL-Syntaxhighlighting: RESTRICT, NO, ACTION added, colors changed
+* Implemented FR #166 [ERDesignerNG] support PgSQL datatype arrays (nested sets)
+* Implemented FR #212 [ERDesignerNG] Datatypes not reverse engineered correctly
+* Added support for reverse engineering into an existing model, preserving the in graph location of previous tables and relations
+
+Release 3.1.1
+
+* Fixed Type Alias NPE while Loading older Models
+* Bump maven-compiler-plugin from 3.8.0 to 3.8.1
+* Bump maven-surefire-plugin from 2.22.1 to 2.22.2
+* Bump jasperreports from 6.8.1 to 6.9.0 (#31)
+* Bump maven-javadoc-plugin from 3.1.0 to 3.1.1 (#32)
+* Bump mysql from 1.11.4 to 1.12.0 (#36)
+* Bump postgresql from 1.11.4 to 1.12.0 (#35)
+* Bump slf4j-log4j12 from 1.7.27 to 1.7.28 (#45)
+* Bump slf4j-api from 1.7.27 to 1.7.28 (#44)
